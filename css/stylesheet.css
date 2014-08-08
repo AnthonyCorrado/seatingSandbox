@@ -2,17 +2,17 @@ body { position: absolute; top: 0px; left: 0px; width: 640px; height: 100%; over
 }
 .container {
 	margin: 0 auto;
-	width: 341px;
-	height: 586px;
+	width: 640px;
+	height: 960px;
 	overflow: hidden;
 	border: 2px solid gray;
 }
 
 #seating-pic {
-	width: 341px;
-	height: 228px;
+	width: 640px;
+	height: 428px;
 	background-image: url(../img/SeatSpriteQuarter.png);
-	background-size: 3069px 684px;
+	background-size: 5760px 1280px;
 	position: relative;
 	 /* background coordinates */
 	background-position: 0 0;

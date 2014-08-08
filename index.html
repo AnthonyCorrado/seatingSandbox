@@ -24,26 +24,26 @@
 	var hammertime = new Hammer(element, options);
 
 	hammertime.on("swiperight", function(ev){ 
-		horizontal += 341;
+		horizontal += 640;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log("HI");});
 
 	hammertime.on("swipeleft", function(ev){ 
-		horizontal -= 341;
+		horizontal -= 640;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log("left")
 		});
 
 	hammertime.on("swipedown", function(ev){
-		if (vertical > - 400) {
-		vertical -= 228;
+		if (vertical > - 800) {
+		vertical -= 428;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log(vertical);
 		console.log('down')}});
 
 	hammertime.on("swipeup", function(ev){ 
 		if (vertical < 0) {
-		vertical += 228;
+		vertical += 428;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log(vertical);
 		console.log('up')}})
