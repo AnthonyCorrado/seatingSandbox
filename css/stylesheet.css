@@ -1,10 +1,9 @@
-body {
-	margin: 0 auto;
+body { position: absolute; top: 0px; left: 0px; width: 640px; height: 100%; overflow: hidden; margin: 0; padding: 0;
 }
 .container {
 	margin: 0 auto;
-	width: 320px;
-	height: 460px;
+	width: 341px;
+	height: 586px;
 	overflow: hidden;
 	border: 2px solid gray;
 }
@@ -19,7 +18,7 @@ body {
 	background-position: 0 0;
 	/* element coordinates */
 	left: 0; /* 0px from the left */
-	top: 13%;  /* 0px from the top  */
+	top: 25%;  /* 0px from the top  */
 }
 .infobox {
 	width: 98%;
@@ -28,11 +27,11 @@ body {
 	background-color: #b4b4b4;
 	border-radius: 12px;
 	position: relative;
-	top: 16%;
+	top: 28%;
 }
 .buy {
 	margin-left: 10%;
-	margin-top: 29%;
+	margin-top: 52%;
 	width: 80%;
 	height: 5%;
 	position: relative;
