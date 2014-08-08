@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=2.0">
+	<title>swiping gestures</title>
+    <script src="js/hammer.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div id="seating-pic"></div>
+		<div class="infobox"></div>
+		<button class="buy">Buy Tickets</button>
+	</div>
+
+<script>
+	var horizontal = 0;
+	var vertical = 0;
+	var element = document.getElementById('seating-pic');
+	var options = {
+	  dragLockToAxis: true,
+	  dragBlockHorizontal: true
+	};
+	var hammertime = new Hammer(element, options);
+
+	hammertime.on("swiperight", function(ev){ 
+		horizontal += 341;
+		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
+		console.log("HI");});
+
+	hammertime.on("swipeleft", function(ev){ 
+		horizontal -= 341;
+		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
+		console.log("left")
+		});
+
+	hammertime.on("swipedown", function(ev){
+		if (vertical > - 400) {
+		vertical -= 228;
+		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
+		console.log(vertical);
+		console.log('down')}});
+
+	hammertime.on("swipeup", function(ev){ 
+		if (vertical < 0) {
+		vertical += 228;
+		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
+		console.log(vertical);
+		console.log('up')}})
+
+	// hammertime.on("tap", function(ev) {
+	//      console.log('Hello Phoebe!');
+</script>
+
+</body>
+</html>
