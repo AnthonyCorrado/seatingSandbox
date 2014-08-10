@@ -26,6 +26,7 @@
 	hammertime.on("swiperight", function(ev){ 
 		horizontal += 640;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
+		console.log(screenWidth);
 		console.log("HI");});
 
 	hammertime.on("swipeleft", function(ev){ 
@@ -35,7 +36,7 @@
 		});
 
 	hammertime.on("swipedown", function(ev){
-		if (vertical > - 800) {
+		if (vertical > - 400) {
 		vertical -= 428;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log(vertical);
