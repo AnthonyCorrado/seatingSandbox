@@ -11,8 +11,8 @@ body { position: absolute; top: 0px; left: 0px; width: 640px; height: 100%; over
 #seating-pic {
 	width: 640px;
 	height: 428px;
-	background-image: url(../img/staplesFullSpriteComp.png);
-	background-size: 21760px 1284px;
+	background-image: url(../img/staplesFirstHalfSprite.png);
+	background-size: 10880px 1284px;
 	position: relative;
 	 /* background coordinates */
 	background-position: 0 0;
