@@ -14,6 +14,8 @@
 	</div>
 
 <script>
+	var widthBlock = 640;
+	var heigthBlock = 428;
 	var horizontal = 0;
 	var vertical = 0;
 	var element = document.getElementById('seating-pic');
@@ -24,27 +26,48 @@
 	var hammertime = new Hammer(element, options);
 
 	hammertime.on("swiperight", function(ev){ 
-		horizontal += 640;
+		horizontal += widthBlock;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
-		console.log(screenWidth);
-		console.log("HI");});
+		console.log(horizontal);
+		// transitions onto second sprite page 
+		if (horizontal === widthBlock * 18 || horizontal === widthBlock * 52) {
+			document.getElementById('seating-pic').style.backgroundImage = "url('img/staplesSecondHalfSprite.png')";
+			console.log('transition');
+		}
+		// transitions back to origin sprite page after full arena rotation
+		else if (horizontal === widthBlock * 35 || horizontal === widthBlock * 69) {
+			console.log('math is right');
+			document.getElementById('seating-pic').style.backgroundImage = "url('img/staplesFirstHalfSprite.png')";
+		};
+	});
 
 	hammertime.on("swipeleft", function(ev){ 
-		horizontal -= 640;
+		horizontal -= widthBlock;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
-		console.log("left")
+		console.log(horizontal);
+		// transitions onto second sprite page 
+		if (horizontal === widthBlock * -(17) || horizontal === widthBlock * -(51)) {
+			document.getElementById('seating-pic').style.backgroundImage = "url('img/staplesSecondHalfSprite.png')";
+			console.log('transition');
+		}
+		// transitions back to origin sprite page after full arena rotation
+		else if (horizontal === widthBlock * -(34) || horizontal === widthBlock * -(68)) {
+			console.log('math is right');
+			document.getElementById('seating-pic').style.backgroundImage = "url('img/staplesFirstHalfSprite.png')";
+		};
+		console.log("left");
 		});
 
 	hammertime.on("swipedown", function(ev){
-		if (vertical > - 1000) {
-		vertical -= 428;
+		if (vertical > -800) {
+		vertical -= heigthBlock;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log(vertical);
 		console.log('down')}});
 
 	hammertime.on("swipeup", function(ev){ 
 		if (vertical < 0) {
-		vertical += 428;
+		vertical += heigthBlock;
 		document.getElementById('seating-pic').style.backgroundPosition = horizontal +'px ' + vertical + 'px';
 		console.log(vertical);
 		console.log('up')}})
